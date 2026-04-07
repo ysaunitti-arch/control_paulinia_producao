@@ -766,7 +766,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_loteamentos_c_atributos_2rule0_eval_expression(context) {
+function exp_Loteamentos_2rule0_eval_expression(context) {
     // loteamentos_analise_revisao_cadastral = 'PENDENTE'
 
     var feature = context.feature;
@@ -779,7 +779,20 @@ function exp_loteamentos_c_atributos_2rule0_eval_expression(context) {
 }
 
 
-function exp_loteamentos_c_atributos_2rule1_eval_expression(context) {
+function exp_Loteamentos_2rule1_eval_expression(context) {
+    // loteamentos_analise_vetorizacao_CAD = 'OK'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.get('loteamentos_analise_vetorizacao_CAD')  == 'OK');
+    } else {
+        return (feature.get('loteamentos_analise_vetorizacao_CAD')  == 'OK');
+    }
+}
+
+
+function exp_Loteamentos_2rule2_eval_expression(context) {
     // loteamentos_analise_ortofoto_base_CAD = 'OK'
 
     var feature = context.feature;

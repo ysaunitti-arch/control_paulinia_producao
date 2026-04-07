@@ -12,7 +12,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([273752.119168, 7476871.559686, 286808.708420, 7484553.503050], map.getSize());
+map.getView().fit([275998.341124, 7476360.334951, 282295.906002, 7484042.278315], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -1096,6 +1096,19 @@ let measuring = false;
 
 //layer search
 
+var searchLayer = new SearchLayer({
+    layer: lyr_Loteamentos_2,
+    colName: 'NM_LOTEAME',
+    zoom: 10,
+    collapsed: true,
+    map: map,
+    maxResults: 10,
+    showOnFocus: false
+});
+map.addControl(searchLayer);
+document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
+document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
+    
 
 //scalebar
 
